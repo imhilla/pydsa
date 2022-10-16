@@ -19,7 +19,6 @@ def factorial(n):
         # make a calculation and a recursive call
         return n * factorial(n - 1)
 
-
 # print(factorial(4))
 
 # Divide and conquer
@@ -41,6 +40,7 @@ def factorial(n):
 # Binary search
 # This algorithm is used to find a given element from a sorted list of elements
 
+
 def binary_search(arr, start, end, key):
     while start <= end:
         mid = start + int((end - start) / 2)
@@ -57,3 +57,24 @@ arr = [4, 6, 9, 13, 14, 18, 21, 24, 38]
 x = 13
 result = binary_search(arr, 0, len(arr)-1, x)
 print(result)
+
+# Merge sort
+# merge sort is an algorithm for sorting a list
+#  of n natural numbers in increasing order.
+# Firstly, the given list of elements is divided iteratively
+# into equal parts until each sublist contains one elemnt, and then
+# these sublist are combined to create a new list in a sorted order
+
+
+def merge_sort(unsorted_list):
+    if len(unsorted_list) == 1:
+        return unsorted_list
+    mid_point = int(len(unsorted_list) / 2)
+    first_half = unsorted_list[:mid_point]
+    second_half = unsorted_list[mid_point:]
+    half_a = merge_sort(first_half)
+    half_b = merge_sort(second_half)
+    return merge(half_a, half_b)
+
+
+def merge():
