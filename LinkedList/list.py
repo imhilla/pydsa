@@ -23,24 +23,14 @@ while current:
 
 # a better and more efficient way
 
-
-def iter(self):
-    current = self.head
-    while current:
-        val = current.data
-        current = current.next
-        yield val
-
-# for word in words.iter():
-#   print(word)
-
-
 # class SinglyLinkedList:
 #     def __init__(self):
 #         self.head = None
 
 # appending items to a list
 # appending to the end of the list
+
+
 class SinglyLinkedList:
     def __init__(self):
         self.head = None
@@ -56,3 +46,19 @@ class SinglyLinkedList:
             while current.next:
                 current = current.next
             current.next = node
+
+    def iter(self):
+        current = self.head
+        while current:
+            val = current.data
+            current = current.next
+            yield val
+
+
+words = SinglyLinkedList()
+words.append("egg")
+words.append("ham")
+words.append("spam")
+
+for word in words.iter():
+    print(word)
