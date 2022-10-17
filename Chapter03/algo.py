@@ -77,4 +77,29 @@ def merge_sort(unsorted_list):
     return merge(half_a, half_b)
 
 
-def merge():
+def merge(first_sublist, second_sublist):
+    i = j = 0
+    merged_list = []
+    while i < len(first_sublist) and j < len(second_sublist):
+        if first_sublist[i] < second_sublist[j]:
+            merged_list.append(first_sublist[i])
+            i += 1
+        else:
+            merged_list.append(second_sublist[j])
+            j += 1
+    while i < len(first_sublist):
+        merged_list.append(first_sublist[i])
+        i += 1
+
+    while j < len(second_sublist):
+        merged_list.append(second_sublist[j])
+        j += 1
+    return merged_list
+
+
+a = [11, 12, 7, 41, 61, 13, 16, 14]
+print(merge_sort(a))
+
+# Dynamic programming
+# dynamic programming is the most powerful design technique for solving
+# optimization problems. The basic idea of dynamic programming is based on the intuition of the divide and conquer
